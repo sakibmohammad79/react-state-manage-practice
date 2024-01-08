@@ -6,21 +6,26 @@ import CounterWithClass from "./components/CounterWithClass";
 import CounterWithFunction from "./components/CounterWithFunction";
 import UserInfoWithUseState from "./components/UserInfoWithUseState";
 import UserInfoWithUseReducer from "./components/UserInfoWithUseReducer";
+import TodoProvider from "./components/context/TodoProvider";
+import TodoForm from "./components/Todo/TodoForm";
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <div className="border border-red-500 m-10 p-10">
-      {/* <CounterWithClass></CounterWithClass> */}
-      {/* <button>{count}</button>
+    <TodoProvider>
+      <div className="">
+        {/* <CounterWithClass></CounterWithClass> */}
+        {/* <button>{count}</button>
       <CounterWithFunction
-        count={count}
-        setCount={setCount}
-      ></CounterWithFunction> */}
-      {/* <UserInfoWithUseState /> */}
-      <UserInfoWithUseReducer></UserInfoWithUseReducer>
-    </div>
+      count={count}
+      setCount={setCount}
+    ></CounterWithFunction> */}
+        {/* <UserInfoWithUseState /> */}
+        {/* <UserInfoWithUseReducer></UserInfoWithUseReducer> */}
+        <TodoForm></TodoForm>
+      </div>
+    </TodoProvider>
   );
 }
 
