@@ -4,14 +4,22 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import CounterWithClass from "./components/CounterWithClass";
 import CounterWithFunction from "./components/CounterWithFunction";
+import UserInfoWithUseState from "./components/UserInfoWithUseState";
+import UserInfoWithUseReducer from "./components/UserInfoWithUseReducer";
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
-    <div>
+    <div className="border border-red-500 m-10 p-10">
       {/* <CounterWithClass></CounterWithClass> */}
-      <CounterWithFunction></CounterWithFunction>
+      {/* <button>{count}</button>
+      <CounterWithFunction
+        count={count}
+        setCount={setCount}
+      ></CounterWithFunction> */}
+      {/* <UserInfoWithUseState /> */}
+      <UserInfoWithUseReducer></UserInfoWithUseReducer>
     </div>
   );
 }

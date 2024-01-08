@@ -1,14 +1,21 @@
-import { useState } from "react";
+import ChildComponent from "./ChildComponent";
 
-const CounterWithFunction = () => {
-  const [count, setCount] = useState(0);
+type TProps = {
+  count: number;
+  setCount: React.Dispatch<React.SetStateAction<number>>;
+};
+
+const CounterWithFunction = ({ count, setCount }: TProps) => {
   return (
-    <button
-      onClick={() => setCount((prev) => prev + 1)}
-      className="ms-5 mt-5 bg-blue-500 text-white font-semibold py-2 px-4 rounded"
-    >
-      {count}
-    </button>
+    <div className="border border-red-500 m-10 p-10">
+      <button
+        onClick={() => setCount((prev) => prev + 1)}
+        className=" bg-blue-500 text-white font-semibold py-2 px-4 rounded"
+      >
+        {count}
+      </button>
+      <ChildComponent count={count}></ChildComponent>
+    </div>
   );
 };
 
